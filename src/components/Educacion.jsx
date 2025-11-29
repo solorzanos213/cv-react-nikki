@@ -4,8 +4,8 @@ function Educacion({ lista }) {
       <h3>Educación</h3>
 
       <ul>
-        {lista.map((item, i) => (
-          <li key={i}>{item}</li>
+        {lista.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
 

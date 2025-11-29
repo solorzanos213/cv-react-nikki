@@ -17,7 +17,6 @@ function App() {
 
       <Perfil resumen={resumenPerfil} />
 
-      {/* PASO 5: Se pasa el arreglo de experiencias */}
       <Experiencia lista={experiencias} />
 
       <Educacion lista={estudios} />
