@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 function FormularioTecnologia({ agregarTecnologia }) {
-  const [nuevaTec, setNuevaTec] = useState("");
+  const [input, setInput] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // evita recargar la página
-    if (nuevaTec.trim() !== "") {
-      agregarTecnologia(nuevaTec.trim());
-      setNuevaTec(""); // limpiar input
+    e.preventDefault();
+    if (input.trim() !== "") {
+      agregarTecnologia(input.trim());
+      setInput("");
     }
   };
 
@@ -15,9 +15,9 @@ function FormularioTecnologia({ agregarTecnologia }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
         placeholder="Nueva tecnología"
-        value={nuevaTec}
-        onChange={(e) => setNuevaTec(e.target.value)}
       />
       <button type="submit">Agregar</button>
     </form>

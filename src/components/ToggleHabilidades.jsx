@@ -1,16 +1,8 @@
-import { useState } from "react";
-import Skills from "./Skills";
-
-function ToggleHabilidades() {
-  const [mostrar, setMostrar] = useState(true);
-
+function ToggleHabilidades({ toggle }) {
   return (
-    <section>
-      <button onClick={() => setMostrar(!mostrar)}>
-        {mostrar ? "Ocultar Habilidades" : "Mostrar Habilidades"}
-      </button>
-      {mostrar && <Skills />}
-    </section>
+    <button onClick={toggle}>
+      Mostrar/Ocultar Habilidades
+    </button>
   );
 }
 

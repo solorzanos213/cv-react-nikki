@@ -1,40 +1,47 @@
-import Projects from "./components/Projects";
-import AboutMe from "./components/AboutMe";
+import CabeceraCV from "./components/CabeceraCV";
+import Educacion from "./components/Educacion";
+import Skills from "./components/Skills";
 import ToggleHabilidades from "./components/ToggleHabilidades";
 import FormularioTecnologia from "./components/FormularioTecnologia";
+import Projects from "./components/Projects";
+import AboutMe from "./components/AboutMe";
 import Contact from "./components/Contact";
-import { useState } from "react";
 import "./App.css";
+import { useState } from "react";
+import { tecnologiasIniciales, estudiosIniciales } from "./cvData";
 
 function App() {
-  const [tecnologias, setTecnologias] = useState([
-    "HTML", "CSS", "JavaScript", "React"
-  ]);
+  const [tecnologias, setTecnologias] = useState(tecnologiasIniciales);
+  const [mostrarHabilidades, setMostrarHabilidades] = useState(true);
 
-  const agregarTecnologia = (tec) => {
-    setTecnologias((prev) => [...prev, tec]);
+  const agregarTecnologia = (nueva) => {
+    setTecnologias((prev) => [...prev, nueva]);
+  };
+
+  const toggleHabilidades = () => {
+    setMostrarHabilidades((prev) => !prev);
   };
 
   return (
     <>
       <Projects />
+
+      <CabeceraCV
+        nombre="Sofía Solórzano"
+        cargo="Front-End Developer"
+        ciudad="Bogotá, Colombia"
+        contacto="sofia@email.com"
+      />
+
       <AboutMe />
 
-      {/* Toggle de Habilidades */}
-      <ToggleHabilidades />
+      <ToggleHabilidades toggle={toggleHabilidades} />
 
-      {/* Formulario para agregar tecnología */}
+      {mostrarHabilidades && <Skills tecnologias={tecnologias} />}
+
       <FormularioTecnologia agregarTecnologia={agregarTecnologia} />
 
-      {/* Renderizado dinámico de tecnologías */}
-      <section id="stack">
-        <h2>Stack Tecnológico</h2>
-        <ul>
-          {tecnologias.map((tec, idx) => (
-            <li key={idx}>{tec}</li>
-          ))}
-        </ul>
-      </section>
+      <Educacion estudios={estudiosIniciales} />
 
       <Contact />
     </>
