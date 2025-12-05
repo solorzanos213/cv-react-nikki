@@ -1,35 +1,45 @@
-<<<<<<< HEAD
 # CV Dinámico - Sofía Solórzano
 
-Proyecto de CV interactivo desarrollado con React y Vite.
-
-## Funcionalidades
-
-- **Toggle de Habilidades:** Muestra u oculta las habilidades con un botón.
-- **Formulario de Tecnologías:** Permite agregar nuevas tecnologías al stack dinámicamente.
-- **Renderizado dinámico:** La lista de tecnologías se actualiza automáticamente al agregar nuevas entradas.
-
-## Instrucciones para ejecutar
-
-1. Clonar el repositorio:  
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-=======
-# CV React – Sofía Solórzano
-
-Proyecto realizado como parte de la evidencia GA1-220501096-03-AA1-EV07 del SENA.  
-Este proyecto consiste en construir una hoja de vida dinámica utilizando *componentes reutilizables, **props* y *desestructuración* en React.
+Proyecto de CV interactivo desarrollado con **React** y **Vite**, con funcionalidades de interactividad y renderizado dinámico.
 
 ---
 
-## 🚀 Tecnologías utilizadas
-- React con Vite  
-- JavaScript ES6+  
-- CSS  
-- Git y GitHub  
-- Node.js  
+## Funcionalidades principales
+
+1. **Cabecera Dinámica (`CabeceraCV`)**  
+   - Muestra el nombre, cargo, ciudad y contacto.  
+   - Los datos se pasan como props desde `App.jsx`, lo que hace que el componente sea reutilizable y dinámico.
+
+2. **Educación Dinámica (`Educacion`)**  
+   - Renderiza la lista de estudios desde un arreglo de props (`estudios`).  
+   - Permite actualizar la lista de educación sin modificar el componente.
+
+3. **Habilidades Dinámicas (`Skills`)**  
+   - Renderiza la lista de tecnologías desde el estado en `App.jsx`.  
+   - Actualizable mediante el **Formulario de Tecnologías**.
+
+4. **Toggle de Habilidades (`ToggleHabilidades`)**  
+   - Permite mostrar u ocultar la sección de habilidades con un botón.  
+   - Utiliza `useState` y funciones callback para controlar la visibilidad.
+
+5. **Formulario de Tecnologías (`FormularioTecnologia`)**  
+   - Permite agregar nuevas tecnologías al stack dinámicamente.  
+   - Inputs controlados con `useState` y evento `onSubmit`.
 
 ---
 
-## 📁 Estructura del proyecto
->>>>>>> a8ebe187ad0cfd67e9c95a8e00eb4615006ddfb9
+## Capturas de pantalla
+
+- Toggle de habilidades:  
+![Toggle Habilidades](captura-toggle.png)
+
+- Formulario de tecnologías:  
+![Formulario Tecnologías](captura-formulario.png)
+
+- Lista de tecnologías actualizada:  
+![Lista Tecnologías](captura-lista.png)
+
+---
+
+## Estructura de archivos
+
